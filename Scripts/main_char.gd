@@ -37,8 +37,6 @@ func _physics_process(delta):
 
 	if velocity.y ==0 and is_on_floor() and dusuluyor ==true and vuruyormu == false:
 		sprite.play("Fall_On_Ground")
-		ziplandi = false
-		dusuluyor = false
 		print("dusuldu")
 
 	var direction = Input.get_axis("Left", "Right")
@@ -71,3 +69,12 @@ func _on_animated_sprite_2d_animation_finished():
 	if sprite.animation == "Attack1" || "Attack2" || "Attack3":
 		hareket_edebilirmi = true
 		vuruyormu = false
+		
+	if sprite.animation == "Jump":
+		ziplandi = false
+		
+	if sprite.animation == "Fall_On_Ground":
+		dusuluyor = false
+
+func _on_area_2d_body_entered(body):
+	pass

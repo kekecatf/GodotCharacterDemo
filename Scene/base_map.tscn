@@ -17,14 +17,12 @@ texture = ExtResource("1_i8hgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forest02Preview-01/StaticBody2D"]
 position = Vector2(-0.630005, 480.642)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bs28k")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Forest02Preview-01"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forest02Preview-01/StaticBody2D2"]
 position = Vector2(-1332.36, -60.1858)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bs28k")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_552r0")]

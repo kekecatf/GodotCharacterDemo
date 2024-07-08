@@ -1,0 +1,3 @@
+res://Scene/base_map.tscn
+res://Scene/character_body_2d.tscn
+res://Scripts/main_char.gd
