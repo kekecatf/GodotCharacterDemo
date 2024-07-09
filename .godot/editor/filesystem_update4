@@ -1,3 +1,6 @@
 res://Scene/base_map.tscn
-res://Scene/character_body_2d.tscn
 res://Scripts/main_char.gd
+res://Scene/character_body_2d.tscn
+res://Scene/main_char.tscn
+res://Scene/enemy.tscn
+res://Scripts/Enemy.gd

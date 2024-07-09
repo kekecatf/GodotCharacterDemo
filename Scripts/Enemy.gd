@@ -1,10 +1,9 @@
 extends CharacterBody2D
-class_name char
 
 @onready var sprite = $AnimatedSprite2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -350.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var ziplandi = false
@@ -13,7 +12,7 @@ var vuruyormu = false
 var hareket_edebilirmi = true
 
 func _physics_process(delta):
-	var konum = global_position
+	var hedef_konum
 	
 	if Input.is_action_just_pressed("Attack"):
 		vuruyormu = true
@@ -25,12 +24,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		print("yatay hiz ", velocity.y)
 
-	if Input.is_action_just_pressed("Jump") and is_on_floor() and not vuruyormu:
-		velocity.y = JUMP_VELOCITY
-		print("dikey hiz ", velocity.y)
-		sprite.play("Jump")
-		ziplandi = true
-		print("ziplandi")
 
 	if velocity.y > 0 and not is_on_floor() and not vuruyormu:
 		if not dusuluyor:
@@ -45,7 +38,7 @@ func _physics_process(delta):
 
 	var direction = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 
-	if direction != 0 and not ziplandi and hareket_edebilirmi and not vuruyormu:
+	if direction != 0 and hareket_edebilirmi and not vuruyormu:
 		if Input.is_action_pressed("Run"):
 			sprite.play("Run")
 			velocity.x = direction * SPEED * 1.5
@@ -81,14 +74,7 @@ func _on_animated_sprite_2d_animation_finished():
 		hareket_edebilirmi = true
 		vuruyormu = false
 		
-	if sprite.animation == "Jump":
-		ziplandi = false
-		hareket_edebilirmi = true
-		print("ziplama bitti")
 		
 	if sprite.animation == "Fall_On_Ground":
 		dusuluyor = false
 		hareket_edebilirmi = true
-
-func _on_area_2d_body_entered(body):
-	pass
