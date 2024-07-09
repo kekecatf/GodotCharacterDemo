@@ -332,6 +332,5 @@ shape = SubResource("RectangleShape2D_xmxm1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wg7bk")
-animation = &"Idle"
+animation = &"Attack3"
 autoplay = "Idle"
-frame_progress = 0.619597

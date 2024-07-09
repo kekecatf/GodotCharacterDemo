@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ovqgflymvg8l"]
+[gd_scene load_steps=5 format=3 uid="uid://ovqgflymvg8l"]
 
 [ext_resource type="Texture2D" uid="uid://0gw4uw28u53d" path="res://Assets/forest02_preview-01.png" id="1_i8hgk"]
 [ext_resource type="PackedScene" uid="uid://cykhdluhjj65b" path="res://Scene/main_char.tscn" id="2_552r0"]
+[ext_resource type="PackedScene" uid="uid://cpol4habppqxr" path="res://Scene/enemy.tscn" id="3_xhknn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs28k"]
 size = Vector2(1907.96, 118.684)
@@ -26,5 +27,7 @@ position = Vector2(-1332.36, -60.1858)
 shape = SubResource("RectangleShape2D_bs28k")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_552r0")]
-position = Vector2(230, 143)
-scale = Vector2(0.601562, 0.598148)
+position = Vector2(205, 122)
+
+[node name="Enemy" parent="." instance=ExtResource("3_xhknn")]
+position = Vector2(771, 411)
