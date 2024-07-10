@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cpol4habppqxr"]
+[gd_scene load_steps=54 format=3 uid="uid://cpol4habppqxr"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_qtdhl"]
 [ext_resource type="Texture2D" uid="uid://dyuvv0d8pyhnv" path="res://Assets/Fighter/Attack_1.png" id="2_54t4k"]
@@ -99,6 +99,26 @@ region = Rect2(512, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ik3u"]
 atlas = ExtResource("2_uon1x")
 region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uka5"]
+atlas = ExtResource("5_eivvl")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adlmx"]
+atlas = ExtResource("5_eivvl")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d25f8"]
+atlas = ExtResource("5_eivvl")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flvly"]
+atlas = ExtResource("5_eivvl")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maghb"]
+atlas = ExtResource("5_eivvl")
+region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey8js"]
 atlas = ExtResource("7_k12cf")
@@ -264,6 +284,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0uka5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adlmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d25f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flvly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maghb")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ey8js")
 }, {
 "duration": 1.0,
@@ -332,5 +372,7 @@ shape = SubResource("RectangleShape2D_xmxm1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wg7bk")
-animation = &"Attack3"
+animation = &"Jump"
 autoplay = "Idle"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

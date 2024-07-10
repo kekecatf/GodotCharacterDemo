@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name char
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -29,6 +30,7 @@ func _physics_process(delta):
 		print("dikey hiz ", velocity.y)
 		sprite.play("Jump")
 		ziplandi = true
+		hareket_edebilirmi = false
 		print("ziplandi")
 
 	if velocity.y > 0 and not is_on_floor() and not vuruyormu:
@@ -40,11 +42,12 @@ func _physics_process(delta):
 	if velocity.y == 0 and is_on_floor() and dusuluyor and not vuruyormu:
 		sprite.play("Fall_On_Ground")
 		dusuluyor = false
+		hareket_edebilirmi = true
 		print("dusuldu")
 
 	var direction = Input.get_action_strength("Right2") - Input.get_action_strength("Left2")
 
-	if direction != 0 and not ziplandi and hareket_edebilirmi and not vuruyormu:
+	if direction != 0 and hareket_edebilirmi and not vuruyormu:
 		if Input.is_action_pressed("Run2"):
 			sprite.play("Run")
 			velocity.x = direction * SPEED * 1.5
