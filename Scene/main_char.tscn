@@ -384,7 +384,7 @@ script = ExtResource("1_y636s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nnhii")
-animation = &"Jump"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CharHitbox" type="CollisionShape2D" parent="." groups=["Chars"]]

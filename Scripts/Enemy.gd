@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name char
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -11,14 +10,14 @@ var ziplandi = false
 var dusuluyor = false
 var vuruyormu = false
 var hareket_edebilirmi = true
+var attack_in_progress = false
 
 func _physics_process(delta):
-	var konum = global_position
-	
-	if Input.is_action_just_pressed("Attack2"):
+	if Input.is_action_just_pressed("Attack2") and not attack_in_progress:
 		vuruyormu = true
 		hareket_edebilirmi = false
 		play_random_attack_animation()
+		attack_in_progress = true
 		print("Vuruyor")
 
 	if not is_on_floor():
@@ -82,6 +81,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if sprite.animation == "Attack1" or sprite.animation == "Attack2" or sprite.animation == "Attack3":
 		hareket_edebilirmi = true
 		vuruyormu = false
+		attack_in_progress = false
 		
 	if sprite.animation == "Jump":
 		ziplandi = false

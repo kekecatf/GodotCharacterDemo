@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cpol4habppqxr"]
+[gd_scene load_steps=55 format=3 uid="uid://cpol4habppqxr"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_qtdhl"]
 [ext_resource type="Texture2D" uid="uid://dyuvv0d8pyhnv" path="res://Assets/Fighter/Attack_1.png" id="2_54t4k"]
@@ -361,6 +361,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg2ds"]
+size = Vector2(107.5, 135.5)
+
 [node name="Enemy" type="CharacterBody2D" groups=["Chars", "Enemys"]]
 script = ExtResource("1_qtdhl")
 
@@ -375,4 +378,11 @@ sprite_frames = SubResource("SpriteFrames_wg7bk")
 animation = &"Jump"
 autoplay = "Idle"
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(74.25, 45.75)
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yg2ds")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
