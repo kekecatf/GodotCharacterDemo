@@ -364,7 +364,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg2ds"]
 size = Vector2(107.5, 135.5)
 
-[node name="Enemy" type="CharacterBody2D" groups=["Chars", "Enemys"]]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemys"]]
 script = ExtResource("1_qtdhl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -385,4 +385,3 @@ position = Vector2(74.25, 45.75)
 shape = SubResource("RectangleShape2D_yg2ds")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

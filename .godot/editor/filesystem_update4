@@ -1,5 +1,5 @@
 res://Scene/base_map.tscn
 res://Scene/main_char.tscn
 res://Scene/enemy.tscn
-res://Scripts/Enemy.gd
 res://Scripts/main_char.gd
+res://Scripts/Enemy.gd
