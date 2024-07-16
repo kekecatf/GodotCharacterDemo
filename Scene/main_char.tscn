@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cykhdluhjj65b"]
+[gd_scene load_steps=58 format=3 uid="uid://cykhdluhjj65b"]
 
 [ext_resource type="Script" path="res://Scripts/main_char.gd" id="1_y636s"]
 [ext_resource type="Texture2D" uid="uid://cf048h5fh2i2s" path="res://Assets/Samurai/Attack_1.png" id="2_dcy5e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bqdmsbljugpwp" path="res://Assets/Samurai/Run.png" id="3_362os"]
 [ext_resource type="Texture2D" uid="uid://cfmotkcyee820" path="res://Assets/Samurai/Attack_2.png" id="3_sf588"]
 [ext_resource type="Texture2D" uid="uid://y4fxeidl1v27" path="res://Assets/Samurai/Attack_3.png" id="4_7s1mp"]
+[ext_resource type="AudioStream" uid="uid://5v5n4m1koig3" path="res://Assets/Sounds/slash.wav" id="9_wenxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18tej"]
 atlas = ExtResource("2_dcy5e")
@@ -398,6 +399,9 @@ position = Vector2(74.25, 45.75)
 [node name="AttackHitbox" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_sh3vk")
 disabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wenxo")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
