@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ovqgflymvg8l"]
 
 [ext_resource type="Texture2D" uid="uid://0gw4uw28u53d" path="res://Assets/forest02_preview-01.png" id="1_i8hgk"]
-[ext_resource type="PackedScene" uid="uid://cykhdluhjj65b" path="res://Scene/main_char.tscn" id="2_552r0"]
+[ext_resource type="PackedScene" uid="uid://cykhdluhjj65b" path="res://Assets/Sounds/main_char.tscn" id="2_552r0"]
 [ext_resource type="PackedScene" uid="uid://cpol4habppqxr" path="res://Scene/enemy.tscn" id="3_xhknn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs28k"]
